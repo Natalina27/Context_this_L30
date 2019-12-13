@@ -1,3 +1,5 @@
+
+
 let user = {
     name: "Джон",
     age: 30
@@ -54,6 +56,8 @@ let userJhon = {
     age: 30,
 
     sayHi() {
+
+        //console.log(userJhon.name);
         // this - это "текущий объект"
         console.log(this.name);
     }
@@ -61,6 +65,18 @@ let userJhon = {
 };
 
 userJhon.sayHi(); // Джон
+
+//userJhon = null; // обнулим переменную для наглядности, теперь она не хранит ссылку на объект.
+let admin = userJhon;
+userJhon = null; // обнулим переменную для наглядности, теперь она не хранит ссылку на объект.
+
+admin.sayHi(); // Джон if we use this.name , not userJhon.name
+//console.log(this); //{}
+//console.log(this.name);//undefined
+
+//«this» не является фиксированным
+
+
 
 
 
