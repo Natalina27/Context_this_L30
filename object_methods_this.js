@@ -24,12 +24,12 @@ let user2 = {
 };
 
 // сначала объявляем
-function sayHi() {
+function sayHi1() {
     console.log("Привет a tutti!");
 }
 
 // затем добавляем в качестве метода
-user2.sayHi = sayHi;
+user2.sayHi = sayHi1;
 
 user2.sayHi(); // Привет a tutti!
 
@@ -75,6 +75,30 @@ admin.sayHi(); // Джон if we use this.name , not userJhon.name
 //console.log(this.name);//undefined
 
 //«this» не является фиксированным
+function sayHi2() {
+    console.log( this.name );
+}
+
+sayHi2();//undefined
+
+//
+let userOne = { name: "Джон" };
+let adminOne = { name: "Админ" };
+
+function sayHi() {
+    console.log( this.name );
+}
+
+// используем одну и ту же функцию в двух объектах
+userOne.f = sayHi;
+adminOne.f = sayHi;
+
+// вызовы функции, приведённые ниже, имеют разное значение this
+// "this" внутри функции является ссылкой на объект, который указан "перед точкой"
+userOne.f(); // Джон  (this == user)
+adminOne.f(); // Админ  (this == admin)
+
+adminOne['f'](); // Админ (неважен способ доступа к методу - через точку или квадратные скобки)
 
 
 
