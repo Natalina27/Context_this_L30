@@ -105,9 +105,21 @@ adminOne.f(); // Админ  (this == admin)
 
 adminOne['f'](); // Админ (неважен способ доступа к методу - через точку или квадратные скобки)
 
+
+console.log('=============');
 //Внутренняя реализация: Ссылочный тип (Reference type)
 
+let userRef = {
+    name: "Джон",
+    hi() { console.log(this.name); },
+    bye() { console.log("Пока"); }
+};
 
+userRef.hi(); // Джон (простой вызов метода работает хорошо)
+
+// теперь давайте попробуем вызывать user.hi или user.bye
+// в зависимости от имени пользователя user.name
+(userRef.name === "Джон" ? userRef.hi : userRef.bye)(); // undefined - lost this
 
 
 
