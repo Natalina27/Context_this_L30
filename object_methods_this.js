@@ -6,7 +6,7 @@ let user = {
 };
 
 
-
+console.log('=============');
 //Для начала давайте научим нашего пользователя user здороваться:
 let user1 = {
     name: "Джон",
@@ -34,6 +34,8 @@ user2.sayHi = sayHi1;
 user2.sayHi(); // Привет a tutti!
 
 //
+console.log('=============');
+//
 let user3 = {
     name: "Джон",
     age: 30,
@@ -46,6 +48,7 @@ let user3 = {
         }
 };
 user3.sayHi();
+console.log('=============');
 
 //this
 //Для доступа к информации внутри объекта метод может использовать ключевое слово this.
@@ -87,6 +90,8 @@ function sayHi2() {
 sayHi2();//undefined
 
 //
+console.log('=============');
+//
 let userOne = { name: "Джон" };
 let adminOne = { name: "Админ" };
 
@@ -120,6 +125,11 @@ userRef.hi(); // Джон (простой вызов метода работае
 // теперь давайте попробуем вызывать user.hi или user.bye
 // в зависимости от имени пользователя user.name
 (userRef.name === "Джон" ? userRef.hi : userRef.bye)(); // undefined - lost this
+
+
+console.log('=============');
+//arrow functions have no own this
+
 
 
 
