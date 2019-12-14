@@ -86,11 +86,16 @@ console.log('==============================' );
 // mul() (умножить) перемножает сохранённые значения и возвращает результат.
 
 let calculator = {
-  // ... ваш код ...
+  read(a, b){
+      console.log(`a = ${this.a = a}`);
+      console.log(`b = ${this.b = b}`);
+  },
+    sum(){return this.a + this.b;},
+    mul(){ return this.a * this.b;}
 };
 
-calculator.read();
-console.log( calculator.sum() );
-console.log( calculator.mul() );
+ calculator.read(3, 8);
+ console.log( 'a + b = ', calculator.sum() );
+console.log( 'a * b = ', calculator.mul() );
 
 
