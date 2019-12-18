@@ -76,3 +76,14 @@ printArgs(1, 2, 3);
 
 //[].slice.call(arguments);
 
+//По стандарту вызов arr.slice(start, end) создаёт новый массив и
+// копирует в него элементы массива arr от start до end.
+// А если start и end не указаны, то копирует весь массив.
+
+function printArgsSlice() {
+    // вызов arr.slice() скопирует все элементы из this в новый массив
+    let args = [].slice.call(arguments);
+    console.log( args.join(', ') ); // args - полноценный массив из аргументов
+}
+
+printArgsSlice('Привет', 'мой', 'мир'); // Привет, мой, мир
