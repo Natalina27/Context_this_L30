@@ -37,5 +37,17 @@ function printArgs() {
 
 printArgs(1, 2, 3);
 
+//join реализован примерно так:
 
+function join(separator) {
+    if (!this.length) return '';
+
+    let str = this[0];
+
+    for (let i = 1; i < this.length; i++) {
+        str += separator + this[i];
+    }
+
+    return str;
+}
 
