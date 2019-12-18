@@ -60,6 +60,8 @@ function join(separator) {
 //
 // Безопасно вызвать метод нам поможет call:
 
+//join.call(arguments)
+
 function printArgs() {
     let join = [].join; // скопируем ссылку на функцию в переменную
 
@@ -71,3 +73,6 @@ function printArgs() {
 }
 
 printArgs(1, 2, 3);
+
+//[].slice.call(arguments);
+
