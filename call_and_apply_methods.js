@@ -27,5 +27,15 @@ showFullName.call(user, 'firstName', 'patronym'); //Natalya  Viktorovna
 
 //arguments не массив, а обычный объект,
 // поэтому таких полезных методов как push, pop, join и других у него нет.
+function printArgs() {
+    arguments.join = [].join; // одолжили метод - объявлен пустой массив  и скопирован его метод .join
+
+    let argStr = arguments.join(':'); // запустили join в контексте arguments, как будто он всегда там был.
+
+    console.log( argStr ); // сработает и выведет 1:2:3
+}
+
+printArgs(1, 2, 3);
+
 
 
