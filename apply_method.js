@@ -9,4 +9,10 @@ arr.push(5);
 arr.push(2);
 
 // получить максимум из элементов arr
-console.log( Math.max.apply(null, arr) ); // 5
+console.log( Math.max.apply(null, arr) ); // 5 //null- в своей внутренней реализации
+// метод Math.max не использует this.
+
+//В современном стандарте call/apply передают this «как есть».
+//
+// А в старом, без use strict, при указании первого аргумента null или undefined в call/apply,
+// функция получает this = window
