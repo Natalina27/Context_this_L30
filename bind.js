@@ -44,3 +44,12 @@ user = { sayHi() { console.log("Другой пользователь в 'setTim
 // (термин взят из спецификации), который вызывается как функция и
 // прозрачно передаёт вызов в func, при этом устанавливая this=context.
 // Другими словами, вызов boundFunc подобен вызову func с фиксированным this.
+
+user = {
+  firstName: "Вася",
+  sayHi() { console.log(`Привет, ${this.firstName}!`)} };
+let sayHi = user.sayHi.bind(user); // (*)
+//user.firstName = 'Kolya';
+sayHi(); // Привет, Вася!
+
+setTimeout(sayHi, 1000); // Привет, Вася!
