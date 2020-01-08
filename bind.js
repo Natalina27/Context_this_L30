@@ -86,4 +86,6 @@ for (let key in user) {
 //Полный синтаксис bind:
 
  //   let bound = func.bind(context, [arg1], [arg2], ...);
+//    let boundFunc = func.bind(context); nepolnii syntax
+
 //Это позволяет привязать контекст this и начальные аргументы функции.
