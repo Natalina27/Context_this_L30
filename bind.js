@@ -79,6 +79,7 @@ for (let key in user) {
     user[key] = user[key].bind(user);
   }
 }
+console.log('===============');
 
 //Частичное применение
 //Мы можем привязать не только this, но и аргументы.
@@ -95,6 +96,7 @@ function mult(a, b) {
   return a * b;
 }
 //Давайте воспользуемся bind, чтобы создать функцию double на её основе:
+console.log('double');
 let double = mult.bind(null, 2);
 
 console.log( double(3) ); // = mul(2, 3) = 6
@@ -109,3 +111,12 @@ console.log( double(5) ); // = mul(2, 5) = 10
 //Обратите внимание, что в данном случае мы на самом деле не используем this.
 // Но для bind это обязательный параметр,
 // так что мы должны передать туда что-нибудь вроде null.
+
+//В следующем коде функция triple умножает значение на три:
+console.log('triple');
+let triple = mult.bind(null, 3);
+
+console.log( triple(3) ); // = mul(3, 3) = 9
+console.log( triple(4) ); // = mul(3, 4) = 12
+console.log( triple(5) ); // = mul(3, 5) = 15
+
