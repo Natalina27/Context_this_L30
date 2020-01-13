@@ -129,3 +129,23 @@ console.log( triple(5) ); // = mul(3, 5) = 15
 
 //Частичное применение без контекста
 //вспомогательная функцая partial, которая привязывает только аргументы.
+function partial(func, ...argsBound) {
+    return function(...args) { // (*)
+        return func.call(this, ...argsBound, ...args);
+    }
+}
+
+// использование:
+ user2 = {
+    firstName: "John",
+    say(time, phrase) {
+        console.log(`[${time}] ${this.firstName}: ${phrase}!`);
+    }
+};
+
+// добавляем частично применённый метод с фиксированным временем
+user2.sayNow = partial(user2.say, new Date().getHours() + ':' + new Date().getMinutes());
+
+user2.sayNow("Hello");
+// Что-то вроде этого:
+// [10:00] John: Hello!
