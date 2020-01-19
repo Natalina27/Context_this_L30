@@ -6,7 +6,7 @@
     }
 
     let user = {
-    g: f.bind(null),
-        };
+   g: f.bind(null),
+    };
 
 user.g();
